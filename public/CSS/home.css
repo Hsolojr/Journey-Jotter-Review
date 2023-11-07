@@ -1,0 +1,116 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --main-color: #192655;
+    --secondary-color: #3876BF;
+    --third-color: #E1AA74;
+    --fourth-color: #F3F0CA;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #2979FF, #55C9FF);
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+#main {
+    width: 66vw;
+}
+
+#main-search-bar {
+    text-align: center;
+    margin: 20px 0;
+}
+
+#input-bar {
+    width: 100%;
+    height: 50px;
+    font-size: 20px;
+    padding: 10px;
+    border: 1px solid var(--main-color);
+    border-radius: 5px;
+}
+#submit {
+    /* New styles for the button */
+    display: inline-block;
+    background-color: var(--main-color); /* Use the main color as the background color */
+    color: #fff; /* Text color */
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s; /* Smooth color transition on hover */
+}
+
+#submit:hover {
+    background-color: var(--secondary-color); /* Change the background color on hover to the secondary color */
+}
+#homepage-nav {
+    background-color: #fff;
+    padding: 10px 0; /* Adjust the vertical padding */
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.nav-link {
+    color: var(--main-color);
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.3s;
+    padding: 10px 20px;
+}
+
+.nav-link:hover {
+    color: var(--secondary-color);
+    background-color: var(--main-color);
+    color: #fff;
+    border-radius: 3px;
+}
+
+header {
+    text-align: center;
+    background: rgba(52, 73, 94, 0.8);
+    padding: 20px 0;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    color: #fff;
+    width: 66vw;
+}
+
+h1 {
+    font-size: 2.5em;
+    color: #fff;
+}
+.bar {
+    width: 25px; /* Adjust the width as needed */
+    height: 3px; /* Adjust the height as needed */
+    background-color: var(--main-color); /* Color of the bars */
+    margin: 4px 0;
+}
+#hamburger{
+    display: none;
+}
+
+@media screen and (max-width: 992px) {
+    #hamburger {
+        display: inline-block;
+        cursor: pointer;
+    }
+
+    #nav-list {
+        display: none; /* Initially hide the list for smaller screens */
+    }
+}

@@ -1,0 +1,3 @@
+DROP DATABASE IF EXISTS jotter_db;
+CREATE DATABASE jotter_db;
+
