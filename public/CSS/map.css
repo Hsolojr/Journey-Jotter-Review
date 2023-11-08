@@ -1,8 +1,6 @@
-
 body {
   background-color: #106E71;
 }
-
 html, body {
     margin: 0;
     padding: 0;
@@ -13,41 +11,34 @@ html, body {
     line-height: 1.5;
     box-sizing: border-box;
 }
-
 /* Header */
 header {
     display: flex;
     padding: .5rem;
 }
-
 h1 {
     padding-left: 1rem;
     cursor: pointer;
     font-size: 20px;
 }
-
 h2 {
     font-size: 2rem;
 }
-
 nav {
     margin-left: auto;
 }
-
 /* Navigation */
 ul {
     list-style: none;
     padding: 0;
     display: flex;
 }
-
 li {
     margin-right: 20px;
     cursor: pointer;
     font-size: 14px;
     padding-left: 10px;
 }
-
 /* Container */
 .container {
     position: relative;
@@ -56,7 +47,6 @@ li {
     padding: 1rem;
     min-height: 450px;
 }
-
 /* Info */
 .contentContainer {
     display: flex;
@@ -66,16 +56,12 @@ li {
     padding: 0;
     margin-top: 2rem;
 }
-
 .contentContainer h2 {
     margin: .5rem;
 }
-
 .contentContainer p {
     margin-bottom: 2rem;
 }
-
-
 /* Map */
 #map {
     position: absolute;
@@ -86,15 +72,13 @@ li {
     width: 90%;
     height: 750px; /* Adjusted height to accommodate text */
 }
-
 #modalMap {
   z-index: 1;
   width: 100%;
-  height: 100%; 
+  height: 100%;
   margin: 0;
   padding: 0;
 }
-
 /* Custom Map Control Button */
 .custom-map-control-button {
     background-color: #fff;
@@ -108,67 +92,86 @@ li {
     height: 40px;
     cursor: pointer;
 }
-
 .custom-map-control-button:hover {
     background: rgb(235, 235, 235);
 }
-
+.controls {
+  background-color: #fff;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  height: 32px;
+  margin-top: 10px;
+  outline: none;
+  padding: 0 11px 0 13px;
+  text-overflow: ellipsis;
+  width: 300px;
+}
+.controls:focus {
+  border-color: #4D90FE;
+}
+.controls::placeholder {
+  color: #A0A0A0;
+}
+.controls {
+  color: #000;
+}
 /* Tooltip */
 #tooltip {
-    position: absolute;
-    top: 20px; 
-    right: 20px;
-    background-color: rgba(0, 0, 0, 0.7);
-    color: white;
-    padding: 10px;
-    border-radius: 5px;
-    display: none;
+  position: fixed;
+  top: 20px; /* Adjust the distance from the top */
+  right: 20px; /* Adjust the distance from the right */
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  display: none; /* Initially hidden */
 }
-
+/* Styling for text color, font size, etc. */
+#tooltip {
+  font-size: 14px;
+}
+/* Animation effect for tooltip */
+#tooltip.active {
+  display: block;
+  animation: fadein 0.5s;
+}
+@keyframes fadein {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
 li {
     position: relative;
 }
-
 li::after {
     content: '';
     display: block;
     width: 0;
     height: 2px;
-    background-color: #D35400; 
+    background-color: #D35400;
     position: absolute;
-    bottom: -5px; 
-    transition: width 0.3s ease; 
+    bottom: -5px;
+    transition: width 0.3s ease;
 }
-
 /* Animate the line on hover */
 li:hover::after {
-    width: 90%; 
+    width: 90%;
 }
-
 .currentPage::after {
     width: 75%;
 }
-
 .thecontent {
    display: flex;
 }
-  
   .thecontent span {
     padding: 1rem;
   }
-  
-  #nutrition-button {
-    padding: 0.5rem 1.5rem;
-    border-radius: 0.2rem;
-    cursor: pointer;
-    border: 0.5px solid #F7E7CE;
-  }
-  
   #openModal {
     width: 250px;
     padding: 0.8rem 1.4rem;
   }
-  
   #themodal {
     position: fixed;
     top: 50%;
@@ -182,7 +185,6 @@ li:hover::after {
     border-radius: 0.5rem;
     z-index: 2;
   }
-
   .left-side {
     flex: 1;
     border-radius: 0.5rem;
@@ -194,7 +196,6 @@ li:hover::after {
     text-align: center;
     font-size: 60px;
   }
-  
   .right-side {
     display: flex;
     justify-content: center;
@@ -202,7 +203,6 @@ li:hover::after {
     flex: 1;
     padding: 1rem;
   }
-  
   .right-side input {
     border-radius: 0.5rem;
     display: flex;
@@ -212,22 +212,18 @@ li:hover::after {
     box-sizing: border-box;
     width: 100%;
   }
-  
   #experience {
     padding-left: 1rem;
     padding: 10px 22px 10px 44px;
   }
-  
   #emotions {
     padding-left: 1rem;
     padding: 10px 22px 10px 44px;
   }
-
   #memories {
     padding-left: 1rem;
     padding: 10px 22px 10px 44px;
   }
- 
 #title {
   padding-top: 10px;
   padding-bottom: 10px;
@@ -239,12 +235,9 @@ li:hover::after {
   outline: none;
   font-size: 2rem;
 }
-
 #title::placeholder {
   color: black;
 }
-
-  
   #modalSubmit {
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     width: 50%;
@@ -256,18 +249,14 @@ li:hover::after {
     border-radius: 0.5rem;
     cursor: pointer;
   }
-  
   #modalSubmit a {
     color: var(--base);
     text-decoration: none;
   }
-
   #closeBtn {
     padding-right: .5rem;
     cursor: pointer;
   }
-  
-
 .rating-box {
   display: flex;
   flex-direction: column;
@@ -275,10 +264,9 @@ li:hover::after {
   align-items: center;
   margin: 2rem;
 }
-
   .rating-box header {
     font-size: 22px;
-    color: #dadada;
+    color: #DADADA;
     font-weight: 500;
     margin-bottom: 20px;
     text-align: center;
@@ -289,22 +277,48 @@ li:hover::after {
     gap: 25px;
   }
   .stars i {
-    color: #e6e6e6;
+    color: #E6E6E6;
     font-size: 35px;
     cursor: pointer;
     transition: color 0.2s ease;
   }
   .stars i.active {
-    color: #ff9c1a;
+    color: #FF9C1A;
   }
-
   .start i:hover {
     color: red;
   }
-
+  footer {
+    position: fixed;
+      bottom: 0;
+      width: 100%;
+      background-color: #333;
+      color: #fff;
+      padding: 20px 0;
+      text-align: center;
+  }
+  /* Footer content styles */
+  .footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  /* Footer links styles */
+  .footer-links {
+    list-style: none;
+    display: flex;
+    margin-top: 10px;
+  }
+  .footer-links li {
+    margin-right: 15px;
+  }
+  .footer-links a {
+    color: #fff;
+    text-decoration: none;
+  }
   .blur-background {
-    filter: blur(3px); 
-    pointer-events: none; 
-    user-select: none; 
-    transition: filter 0.3s ease; 
-}
+    filter: blur(3px);
+    pointer-events: none;
+    user-select: none;
+    transition: filter 0.3s ease;
+} 

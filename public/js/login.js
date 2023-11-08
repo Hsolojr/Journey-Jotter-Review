@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   signupForm.addEventListener("submit", function (event) {
     event.preventDefault();
-
+    
     const usernameInput = document.getElementById("username-signup").value;
     const emailInput = document.getElementById("email-signup").value;
     const passwordInput = document.getElementById("password-signup").value;
