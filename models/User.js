@@ -1,8 +1,12 @@
 const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../config/connection');
+const { sequelize } = require('../config/connection');
 const bcrypt = require('bcrypt');
 
-class User extends Model { }
+class User extends Model {
+    checkPassword(loginPw) {
+        return bcrypt.compareSync(loginPw, this.password);
+    }
+}
 
 User.init(
     {
@@ -14,7 +18,7 @@ User.init(
         },
         username: {
             type: DataTypes.STRING,
-            allowNull: false,
+            allowNull: true, // Make 'username' optional
         },
         email: {
             type: DataTypes.STRING,
@@ -35,6 +39,11 @@ User.init(
     {
         hooks: {
             beforeCreate: async (newUserData) => {
+                // If 'username' is not provided, generate a default username
+                if (!newUserData.username) {
+                    const nextNumber = await User.count() + 1;
+                    newUserData.username = `User${nextNumber}`;
+                }
                 newUserData.password = await bcrypt.hash(newUserData.password, 10);
                 return newUserData;
             },
